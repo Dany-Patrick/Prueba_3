@@ -10,10 +10,11 @@ public class CurrentUser {
         return currentUser;
     }
 
-    public String uid(){return currentUser.getUid();}
+    public String uid() {
+        return currentUser.getUid();
+    }
 
-    public String email()
-    {
+    public String email() {
         return currentUser.getEmail();
     }
 }

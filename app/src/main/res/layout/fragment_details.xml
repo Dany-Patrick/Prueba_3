@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.DetailsActivityFragment"
+    tools:showIn="@layout/activity_details">
+
+    <EditText
+        android:background="@color/browser_actions_bg_grey"
+        android:id="@+id/placeDetailTv"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="8"
+        android:hint="Escribe una descripcion"/>
+    <RatingBar
+        android:secondaryProgressTint="#FFC107"
+        android:progressTint="#FFC107"
+        android:numStars="5"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/placeDetailTv"
+        android:layout_centerInParent="true"
+        android:id="@+id/starDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/starSelectionDetail"
+        android:layout_below="@id/starDetail"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/itemTextRanking"
+        android:textSize="21dp"
+        android:layout_centerInParent="true"
+
+        android:layout_below="@id/starSelectionDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

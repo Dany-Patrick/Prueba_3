@@ -1,7 +1,7 @@
 package cl.dany.prueba_3.models;
 
 public class LocalUser {
-    private String email,name,uid;
+    private String email, name, uid;
 
     public LocalUser() {
     }

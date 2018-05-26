@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -26,10 +27,14 @@ import cl.dany.prueba_3.login.LoginActivity;
 import cl.dany.prueba_3.models.Place;
 
 public class MainActivity extends AppCompatActivity {
+Place place = new Place();
+    CurrentUser user = new CurrentUser();
+    String emailSanitized = new EmailProcesor().sanitizedEmail(user.email());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -51,38 +56,23 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         //se llama el textview del dialog
-                        CurrentUser user = new CurrentUser();
-                        String key = new Nodes().pending().push().getKey();
+
+
                         EditText editText = dialog.findViewById(R.id.placeListItem);
                         String name = editText.getText().toString();
 
-                        String emailSanitized = new EmailProcesor().sanitizedEmail(user.email());
-                        Place place = new Place(name, "", key, emailSanitized,0,false);
-                        if(name.trim().length() >0)
-                        {
+
+                        String key = new Nodes().pending(emailSanitized).push().getKey();
+
+                        place = new Place(name, "", key, emailSanitized, 0, false);
+
+                        if (name.trim().length() > 0) {
                             //se guarda un nuevo Place con el Name
-                            new Nodes().pending().push().setValue(place);
+                            new Nodes().pending(emailSanitized).child(key).setValue(place);
 
                         }
                         //se cierra el dialog
                         dialog.dismiss();
-                    }
-                });
-
-                TextView textView = findViewById(R.id.logoutTv);
-                textView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        AuthUI.getInstance()
-                                .signOut(MainActivity.this)
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        // user is now signed out
-                                        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-                                        startActivity(intent);
-                                        MainActivity.this.finish();
-                                    }
-                                });
                     }
                 });
                 //se le indica al dialog que tenga ancho completo
@@ -91,6 +81,33 @@ public class MainActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        TextView textView = findViewById(R.id.logoutTv);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("LOGGIN","OnCLIK");
+                AuthUI.getInstance()
+                        .signOut(MainActivity.this)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Log.d("LOGGIN","OnComplete");
+                                // user is now signed out
+                                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                                startActivity(intent);
+                                MainActivity.this.finish();
+
+                            }
+                        });
+
+            }
+        });
+
+        TextView textView2 = findViewById(R.id.activityTV);
+        textView2.setText(new CurrentUser().email());
+
+
     }
+
 
 }

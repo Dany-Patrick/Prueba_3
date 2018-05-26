@@ -1,9 +1,14 @@
 package cl.dany.prueba_3.models;
 
-public class Place {
-    private String name,description,uid,owner;
+import java.io.Serializable;
+
+public class Place implements Serializable {
+    private String name, description, uid, owner;
     private float ranking;
     private boolean visited;
+
+    public Place() {
+    }
 
     public Place(String name, String description, String uid, String owner, float ranking, boolean visited) {
         this.name = name;

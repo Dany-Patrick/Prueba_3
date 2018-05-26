@@ -9,13 +9,10 @@ public class LoginValidator {
         this.callBack = callBack;
     }
 
-    public void checkLogin()
-    {
-        if(new CurrentUser().getCurrentUser() != null)
-        {
+    public void checkLogin() {
+        if (new CurrentUser().getCurrentUser() != null) {
             callBack.logged();
-        }else
-        {
+        } else {
             callBack.signUp();
         }
     }
