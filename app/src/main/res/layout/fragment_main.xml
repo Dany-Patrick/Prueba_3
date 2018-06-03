@@ -4,10 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main.MainActivityFragment"
+    android:background="#e0e0e0"
     tools:showIn="@layout/activity_main">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerVW"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </android.support.constraint.ConstraintLayout>

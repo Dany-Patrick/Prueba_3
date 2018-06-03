@@ -22,7 +22,7 @@ import cl.dany.prueba_3.models.Place;
  */
 public class DetailsActivityFragment extends Fragment {
     public static final String PLACE = "cl.dany.prueba_3.main.KEY.PLACE";
-    private  Place place;
+    private Place place;
     CurrentUser user = new CurrentUser();
     String emailSanitized = new EmailProcesor().sanitizedEmail(user.email());
     private TextView textViewRating;
@@ -56,24 +56,18 @@ public class DetailsActivityFragment extends Fragment {
 
                 ranking = rating;
 
-                if(ranking == 0.0 || ranking == 0.5)
-                {
+                if (ranking == 0.0 || ranking == 0.5) {
 
                     textViewRating.setText("Horrible");
-                }else if(ranking == 1.0  || ranking == 1.5)
-                {
+                } else if (ranking == 1.0 || ranking == 1.5) {
                     textViewRating.setText("Malisimo");
-                }else if(ranking == 2.0  || ranking == 2.5)
-                {
+                } else if (ranking == 2.0 || ranking == 2.5) {
                     textViewRating.setText("Más o menos");
-                }else if(ranking == 3.0  || ranking == 3.5)
-                {
+                } else if (ranking == 3.0 || ranking == 3.5) {
                     textViewRating.setText("Bueno");
-                }else if(ranking == 4.0  || ranking == 4.5)
-                {
+                } else if (ranking == 4.0 || ranking == 4.5) {
                     textViewRating.setText("Muy Bueno");
-                }else if(ranking == 5.0 )
-                {
+                } else if (ranking == 5.0) {
                     textViewRating.setText("Excelente!!!");
                 }
             }
@@ -85,8 +79,7 @@ public class DetailsActivityFragment extends Fragment {
         super.onPause();
         place.setDescription(editTextDescription.getText().toString());
         place.setRanking(ranking);
-        if(place.getDescription() != null ||  place.getRanking() != 0)
-        {
+        if (place.getDescription() != null || place.getRanking() != 0) {
             place.setVisited(true);
         }
 
@@ -98,12 +91,10 @@ public class DetailsActivityFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if(place.getDescription() != null)
-        {
+        if (place.getDescription() != null) {
             float ranking = place.getRanking();
             editTextDescription.setText(place.getDescription());
             ratingBar.setRating(ranking);
-
 
 
         }

@@ -27,7 +27,7 @@ import cl.dany.prueba_3.login.LoginActivity;
 import cl.dany.prueba_3.models.Place;
 
 public class MainActivity extends AppCompatActivity {
-Place place = new Place();
+    Place place = new Place();
     CurrentUser user = new CurrentUser();
     String emailSanitized = new EmailProcesor().sanitizedEmail(user.email());
 
@@ -86,12 +86,12 @@ Place place = new Place();
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("LOGGIN","OnCLIK");
+                Log.d("LOGGIN", "OnCLIK");
                 AuthUI.getInstance()
                         .signOut(MainActivity.this)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             public void onComplete(@NonNull Task<Void> task) {
-                                Log.d("LOGGIN","OnComplete");
+                                Log.d("LOGGIN", "OnComplete");
                                 // user is now signed out
                                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                                 startActivity(intent);

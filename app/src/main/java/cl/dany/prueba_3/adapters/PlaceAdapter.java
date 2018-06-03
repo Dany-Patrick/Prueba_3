@@ -23,6 +23,7 @@ import cl.dany.prueba_3.models.PlaceListener;
 public class PlaceAdapter extends FirebaseRecyclerAdapter<Place, PlaceAdapter.PlaceHolder> {
     private PlaceListener listener;
 
+
     public PlaceAdapter(LifecycleOwner lifecycleOwner, PlaceListener listener) {
         super(new FirebaseRecyclerOptions.Builder<Place>()
                 .setQuery(new Nodes().pending(new EmailProcesor().sanitizedEmail(new CurrentUser().email())), Place.class)
@@ -42,20 +43,33 @@ public class PlaceAdapter extends FirebaseRecyclerAdapter<Place, PlaceAdapter.Pl
         return new PlaceHolder(view);
     }
 
+
     @Override
     protected void onBindViewHolder(@NonNull final PlaceHolder holder, int position, @NonNull Place model) {
+
         if (model.getRanking() != 0) {
             holder.itemRatedTV.setVisibility(View.VISIBLE);
             holder.itemRatedTV.setText(String.valueOf(model.getRanking()));
             holder.starIV.setVisibility(View.VISIBLE);
+            if(model.getDescription().length() > 40)
+            {
+                String detail = model.getDescription();
+                String detailShow = detail.substring(0,40);
+                holder.detailsTv.setText(detailShow+"...");
+            }else
+            {
+                holder.detailsTv.setText(model.getDescription());
+            }
+
         } else {
-            holder.itemRatedTV.setVisibility(View.GONE);
-            holder.starIV.setVisibility(View.GONE);
-            holder.itemRatedTV.setText(null);
+            holder.itemRatedTV.setVisibility(View.INVISIBLE);
+            holder.starIV.setVisibility(View.INVISIBLE);
+            holder.itemRatedTV.setText("0.0");
+            holder.detailsTv.setVisibility(View.INVISIBLE);
         }
 
         holder.placeNameTv.setText(model.getName());
-        holder.placeNameTv.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Place auxPlace = getItem(holder.getAdapterPosition());
@@ -76,7 +90,7 @@ public class PlaceAdapter extends FirebaseRecyclerAdapter<Place, PlaceAdapter.Pl
 
     public class PlaceHolder extends RecyclerView.ViewHolder {
 
-        private TextView placeNameTv,itemRatedTV;
+        private TextView placeNameTv, itemRatedTV,detailsTv;
         private ImageView starIV;
         private ImageView placeBTN;
 
@@ -88,6 +102,7 @@ public class PlaceAdapter extends FirebaseRecyclerAdapter<Place, PlaceAdapter.Pl
             itemRatedTV = itemView.findViewById(R.id.itemRated);
             starIV = itemView.findViewById(R.id.starIV);
             placeBTN = itemView.findViewById(R.id.placeImgBtn);
+            detailsTv = itemView.findViewById(R.id.detailsTv);
 
         }
     }
