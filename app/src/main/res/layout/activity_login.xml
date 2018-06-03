@@ -32,7 +32,13 @@
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
-
+            <TextView
+                android:gravity="center_horizontal"
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By Dany-Patrick"
+                />
 
         </LinearLayout>
 
