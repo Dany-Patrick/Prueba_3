@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Travel Bitácora</string>
 
-    <string name="dummy_button">TRAVEL BITÁCORA</string>
-    <string name="dummy_content">INICIANDO...</string>
+    <string name="dummy_button">INICIAR SESIÓN</string>
+    <string name="dummy_content">Travel Bitácora</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_details">DetailsActivity</string>
