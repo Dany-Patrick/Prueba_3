@@ -56,7 +56,7 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"
+        android:layout_gravity="right|bottom"
         android:layout_margin="30dp"
         app:srcCompat="@mipmap/ic_add_circle_outline_white_24dp" />
 

@@ -86,6 +86,8 @@ public class DetailsActivityFragment extends Fragment {
         new Nodes().pending(emailSanitized).child(place.getUid()).child("description").setValue(place.getDescription());
         new Nodes().pending(emailSanitized).child(place.getUid()).child("ranking").setValue(place.getRanking());
         new Nodes().pending(emailSanitized).child(place.getUid()).child("visited").setValue(place.isVisited());
+        new Nodes().pending(emailSanitized).child(place.getUid()).child("latitude").setValue(place.getLatitude());
+        new Nodes().pending(emailSanitized).child(place.getUid()).child("longitude").setValue(place.getLongitude());
     }
 
     @Override

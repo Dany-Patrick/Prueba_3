@@ -27,9 +27,9 @@ import cl.dany.prueba_3.login.LoginActivity;
 import cl.dany.prueba_3.models.Place;
 
 public class MainActivity extends AppCompatActivity {
-    Place place = new Place();
-    CurrentUser user = new CurrentUser();
-    String emailSanitized = new EmailProcesor().sanitizedEmail(user.email());
+    private Place place = new Place();
+    private CurrentUser user = new CurrentUser();
+    private String emailSanitized = new EmailProcesor().sanitizedEmail(user.email());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                         String key = new Nodes().pending(emailSanitized).push().getKey();
-
-                        place = new Place(name, "", key, emailSanitized, 0, false);
+                        place = new Place(name, "", key, emailSanitized, " ","",0,false);
 
                         if (name.trim().length() > 0) {
                             //se guarda un nuevo Place con el Name

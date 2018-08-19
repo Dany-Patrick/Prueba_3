@@ -3,18 +3,21 @@ package cl.dany.prueba_3.models;
 import java.io.Serializable;
 
 public class Place implements Serializable {
-    private String name, description, uid, owner;
+    private String name, description, uid, owner, latitude, longitude;
     private float ranking;
     private boolean visited;
+
 
     public Place() {
     }
 
-    public Place(String name, String description, String uid, String owner, float ranking, boolean visited) {
+    public Place(String name, String description, String uid, String owner, String latitude, String longitude, float ranking, boolean visited) {
         this.name = name;
         this.description = description;
         this.uid = uid;
         this.owner = owner;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.ranking = ranking;
         this.visited = visited;
     }
@@ -49,6 +52,22 @@ public class Place implements Serializable {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     public float getRanking() {

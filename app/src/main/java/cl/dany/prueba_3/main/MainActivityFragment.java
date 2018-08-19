@@ -72,6 +72,7 @@ public class MainActivityFragment extends Fragment implements PlaceListener {
             }
         }, 1800 ,1800);
 
+
     }
 
     @Override
