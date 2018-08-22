@@ -27,12 +27,11 @@ public class DetailsActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE = 1000;
     public static final String PLACE = "cl.dany.prueba_3.main.KEY.PLACE";
-    private static final int RC_GEOLOCATION = 123;
+    private static final int RC_GEOLOCATION = 1234;
     private Place place;
     private FusedLocationProviderClient fusedLocationProviderClient;
     LocationRequest locationRequest;
     LocationCallback locationCallback;
-    private String latitude,longitude ="";
     private com.github.clans.fab.FloatingActionButton button,btnmaps;
 
 
@@ -80,9 +79,9 @@ public class DetailsActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    if (ActivityCompat.checkSelfPermission(DetailsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(DetailsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-                        return;
+                    if (ActivityCompat.checkSelfPermission(DetailsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION};
+                        requestPermissions(permissions, RC_GEOLOCATION);
                     }
                     fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
                     button.setLabelText("Actualizar ubicación");
@@ -121,9 +120,9 @@ public class DetailsActivity extends AppCompatActivity {
 
 
 
-                    if (ActivityCompat.checkSelfPermission(DetailsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(DetailsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-                        return;
+                    if (ActivityCompat.checkSelfPermission(DetailsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION};
+                        requestPermissions(permissions, RC_GEOLOCATION);
                     }
                     fusedLocationProviderClient.removeLocationUpdates(locationCallback);
                 }

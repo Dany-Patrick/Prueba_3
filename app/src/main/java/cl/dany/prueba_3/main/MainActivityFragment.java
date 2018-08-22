@@ -12,6 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.crashlytics.android.Crashlytics;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -47,6 +50,9 @@ public class MainActivityFragment extends Fragment implements PlaceListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+
         final ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.show();
 
@@ -80,6 +86,7 @@ public class MainActivityFragment extends Fragment implements PlaceListener {
         Intent intent = new Intent(getActivity(), DetailsActivity.class);
         intent.putExtra(PLACE, place);
         startActivity(intent);
+
     }
 
     @Override
