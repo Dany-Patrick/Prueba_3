@@ -1,4 +1,4 @@
-package cl.dany.prueba_3.main;
+package cl.dany.travelbitacora.main;
 
 import android.Manifest;
 import android.app.Dialog;
@@ -18,16 +18,19 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.crashlytics.android.Crashlytics;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-import cl.dany.prueba_3.R;
-import cl.dany.prueba_3.data.CurrentUser;
-import cl.dany.prueba_3.data.EmailProcesor;
-import cl.dany.prueba_3.data.Nodes;
-import cl.dany.prueba_3.login.LoginActivity;
-import cl.dany.prueba_3.models.Place;
+import cl.dany.travelbitacora.R;
+import cl.dany.travelbitacora.data.CurrentUser;
+import cl.dany.travelbitacora.data.EmailProcesor;
+import cl.dany.travelbitacora.data.Nodes;
+import cl.dany.travelbitacora.login.LoginActivity;
+import cl.dany.travelbitacora.models.Place;
+import io.fabric.sdk.android.Fabric;
+
 
 public class MainActivity extends AppCompatActivity {
     private Place place = new Place();
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION};
@@ -113,8 +117,20 @@ public class MainActivity extends AppCompatActivity {
         TextView textView2 = findViewById(R.id.activityTV);
         textView2.setText(new CurrentUser().email());
 
+        // TODO: Move this to where you establish a user session
+        logUser();
 
     }
 
+    public void forceCrash(View view) {
+        throw new RuntimeException("This is a crash");
+    }
+    private void logUser() {
+        // TODO: Use the current user's information
+        // You can call any combination of these three methods
+        Crashlytics.setUserIdentifier("polnareff");
+        Crashlytics.setUserEmail("davergarap@uc.cl");
+        Crashlytics.setUserName("Dany-Patrick");
+    }
 
 }

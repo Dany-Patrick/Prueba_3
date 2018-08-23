@@ -1,6 +1,6 @@
-package cl.dany.prueba_3.login;
+package cl.dany.travelbitacora.login;
 
-import cl.dany.prueba_3.data.CurrentUser;
+import cl.dany.travelbitacora.data.CurrentUser;
 
 public class LoginValidator {
     private LoginCallback callBack;

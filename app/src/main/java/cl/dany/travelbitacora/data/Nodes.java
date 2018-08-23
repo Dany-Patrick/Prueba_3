@@ -1,4 +1,4 @@
-package cl.dany.prueba_3.data;
+package cl.dany.travelbitacora.data;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

@@ -8,26 +8,34 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:48912599176:android:ec027dec5fcb8468",
+        "mobilesdk_app_id": "1:48912599176:android:c3d5459f8166352f",
         "android_client_info": {
-          "package_name": "cl.dany.prueba_3"
+          "package_name": "cl.dany.travelbitacora"
         }
       },
       "oauth_client": [
         {
-          "client_id": "48912599176-oejhsomcp34bjg5mbppcjahnj693c6pg.apps.googleusercontent.com",
+          "client_id": "48912599176-a2kiqbq0embe46vkg4b5h3c7ctatklps.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "cl.dany.prueba_3",
+            "package_name": "cl.dany.travelbitacora",
+            "certificate_hash": "ea1a275c603df22d9ee8618245ddf145caa03cd9"
+          }
+        },
+        {
+          "client_id": "48912599176-55a5107eb5kc9ucputg1khckm6ndkn29.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cl.dany.travelbitacora",
             "certificate_hash": "5f2eb300bafe5f245a991c41ee4862c0483e7db8"
           }
         },
         {
-          "client_id": "48912599176-03hf4i1sbvv4pdfhkgs5l5buhv13d226.apps.googleusercontent.com",
+          "client_id": "48912599176-4nei30hqgsimb78bfomgr1frnml75nb2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "cl.dany.prueba_3",
-            "certificate_hash": "ea1a275c603df22d9ee8618245ddf145caa03cd9"
+            "package_name": "cl.dany.travelbitacora",
+            "certificate_hash": "dbe19d4806edd8fef2f68fe0c09ca73ec213ebea"
           }
         },
         {

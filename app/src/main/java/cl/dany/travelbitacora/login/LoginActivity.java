@@ -1,20 +1,22 @@
-package cl.dany.prueba_3.login;
+package cl.dany.travelbitacora.login;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.crashlytics.android.Crashlytics;
 import com.firebase.ui.auth.AuthUI;
 
 import java.util.Arrays;
 
-import cl.dany.prueba_3.R;
-import cl.dany.prueba_3.data.CurrentUser;
-import cl.dany.prueba_3.data.EmailProcesor;
-import cl.dany.prueba_3.data.Nodes;
-import cl.dany.prueba_3.main.MainActivity;
-import cl.dany.prueba_3.models.LocalUser;
+import cl.dany.travelbitacora.R;
+import cl.dany.travelbitacora.data.CurrentUser;
+import cl.dany.travelbitacora.data.EmailProcesor;
+import cl.dany.travelbitacora.data.Nodes;
+import cl.dany.travelbitacora.main.MainActivity;
+import cl.dany.travelbitacora.models.LocalUser;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -26,6 +28,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallback {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
 
 
         setContentView(R.layout.activity_login);

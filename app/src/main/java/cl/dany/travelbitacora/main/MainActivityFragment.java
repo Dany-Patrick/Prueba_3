@@ -1,4 +1,4 @@
-package cl.dany.prueba_3.main;
+package cl.dany.travelbitacora.main;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -12,20 +12,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-
-import com.crashlytics.android.Crashlytics;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-import cl.dany.prueba_3.R;
-import cl.dany.prueba_3.adapters.PlaceAdapter;
-import cl.dany.prueba_3.data.CurrentUser;
-import cl.dany.prueba_3.data.EmailProcesor;
-import cl.dany.prueba_3.data.Nodes;
-import cl.dany.prueba_3.models.Place;
-import cl.dany.prueba_3.models.PlaceListener;
+import cl.dany.travelbitacora.R;
+import cl.dany.travelbitacora.adapters.PlaceAdapter;
+import cl.dany.travelbitacora.data.CurrentUser;
+import cl.dany.travelbitacora.data.EmailProcesor;
+import cl.dany.travelbitacora.data.Nodes;
+import cl.dany.travelbitacora.models.Place;
+import cl.dany.travelbitacora.models.PlaceListener;
 
 /**
  * A placeholder fragment containing a simple view.

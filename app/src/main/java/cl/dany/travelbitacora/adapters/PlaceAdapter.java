@@ -1,4 +1,4 @@
-package cl.dany.prueba_3.adapters;
+package cl.dany.travelbitacora.adapters;
 
 
 import android.arch.lifecycle.LifecycleOwner;
@@ -13,12 +13,12 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-import cl.dany.prueba_3.R;
-import cl.dany.prueba_3.data.CurrentUser;
-import cl.dany.prueba_3.data.EmailProcesor;
-import cl.dany.prueba_3.data.Nodes;
-import cl.dany.prueba_3.models.Place;
-import cl.dany.prueba_3.models.PlaceListener;
+import cl.dany.travelbitacora.R;
+import cl.dany.travelbitacora.data.CurrentUser;
+import cl.dany.travelbitacora.data.EmailProcesor;
+import cl.dany.travelbitacora.data.Nodes;
+import cl.dany.travelbitacora.models.Place;
+import cl.dany.travelbitacora.models.PlaceListener;
 
 public class PlaceAdapter extends FirebaseRecyclerAdapter<Place, PlaceAdapter.PlaceHolder> {
     private PlaceListener listener;

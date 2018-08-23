@@ -1,4 +1,4 @@
-package cl.dany.prueba_3.data;
+package cl.dany.travelbitacora.data;
 
 public class EmailProcesor {
     public String sanitizedEmail(String email) {

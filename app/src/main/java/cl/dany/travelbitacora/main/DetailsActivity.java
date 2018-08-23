@@ -1,4 +1,4 @@
-package cl.dany.prueba_3.main;
+package cl.dany.travelbitacora.main;
 
 import android.Manifest;
 import android.content.Intent;
@@ -20,8 +20,8 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 
-import cl.dany.prueba_3.R;
-import cl.dany.prueba_3.models.Place;
+import cl.dany.travelbitacora.R;
+import cl.dany.travelbitacora.models.Place;
 
 public class DetailsActivity extends AppCompatActivity {
 

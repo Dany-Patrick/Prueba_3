@@ -42,6 +42,14 @@
                     android:paddingRight="16dp"
                     android:text="Cerrar Sesión"
                     android:textColor="@android:color/white" />
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Force Crash!"
+                    android:onClick="forceCrash"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+
             </RelativeLayout>
 
         </android.support.v7.widget.Toolbar>

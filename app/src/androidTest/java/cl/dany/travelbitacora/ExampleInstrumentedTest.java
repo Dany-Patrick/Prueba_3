@@ -1,4 +1,4 @@
-package cl.dany.prueba_3;
+package cl.dany.travelbitacora;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

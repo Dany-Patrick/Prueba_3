@@ -1,4 +1,4 @@
-package cl.dany.prueba_3.main;
+package cl.dany.travelbitacora.main;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,11 +11,11 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import cl.dany.prueba_3.R;
-import cl.dany.prueba_3.data.CurrentUser;
-import cl.dany.prueba_3.data.EmailProcesor;
-import cl.dany.prueba_3.data.Nodes;
-import cl.dany.prueba_3.models.Place;
+import cl.dany.travelbitacora.R;
+import cl.dany.travelbitacora.data.CurrentUser;
+import cl.dany.travelbitacora.data.EmailProcesor;
+import cl.dany.travelbitacora.data.Nodes;
+import cl.dany.travelbitacora.models.Place;
 
 /**
  * A placeholder fragment containing a simple view.

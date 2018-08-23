@@ -1,4 +1,4 @@
-package cl.dany.prueba_3.models;
+package cl.dany.travelbitacora.models;
 
 import java.io.Serializable;
 
